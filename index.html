@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>NFL Scatterplotter</title>
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="styles/bundle.css">
+
+    </head>
+    <body>
+
+      <div class="page-wrapper">
+  <div class="control-pane">
+
+    <div class="input-group" id="input-group--pp-switch">
+  <div class="switch-component">
+    <p class="switch__description">Pick one</p>
+    <div class="switch__option">
+      <input type="radio" name="pp-switch" id="ppSwitchPosition" value="position" class="switch__input"/>
+      <label for="ppSwitchPosition" class="switch__label">By Position</label>
+    </div>
+    <div class="switch__option">
+      <input type="radio" name="pp-switch" id="ppSwitchPlayer" value="player" class="switch__input"/>
+      <label for="ppSwitchPlayer" class="switch__label">By Player</label>
+    </div>
+  </div>
+</div>
+
+    <div class="input-group" id="input-group--positions">
+  
+  <h2 class="input-group__title">Positions</h2>
+  <span class="input-group__toggle"></span>
+  
+  <div class="input-group__content check-group">
+    <div class="check-component-blue">
+      <input type="checkbox" id="check-qb" class="check__input"/>
+      <label for="check-qb" class="check__label">Quarterbacks</label>
+    </div>
+    <div class="check-component-green">
+      <input type="checkbox" id="check-rb" class="check__input"/>
+      <label for="check-rb" class="check__label">Running Backs</label>
+    </div>
+    <div class="check-component-yellow">
+      <input type="checkbox" id="check-te" class="check__input"/>
+      <label for="check-te" class="check__label">Tight Ends</label>
+    </div>
+    <div class="check-component-orange">
+      <input type="checkbox" id="check-wr" class="check__input"/>
+      <label for="check-wr" class="check__label">Wide Receivers</label>
+    </div>
+  </div>
+  
+</div>
+    
+    
+    <div class="input-group" id="input-group--seasons">
+  
+  <h2 class="input-group__title">Seasons</h2>
+  <span class="input-group__toggle"></span>
+  
+  <div class="input-group__content check-group">
+    <div class="check-component-base">
+      <input type="checkbox" id="check-2012" class="check__input"/>
+      <label for="check-2012" class="check__label">2012</label>
+    </div>
+    <div class="check-component-base">
+      <input type="checkbox" id="check-2011" class="check__input"/>
+      <label for="check-2011" class="check__label">2011</label>
+    </div>
+    <div class="check-component-base">
+      <input type="checkbox" id="check-2010" class="check__input"/>
+      <label for="check-2010" class="check__label">2010</label>
+    </div>
+    <div class="check-component-base">
+      <input type="checkbox" id="check-2009" class="check__input"/>
+      <label for="check-2009" class="check__label">2009</label>
+    </div>
+    <div class="check-component-base">
+      <input type="checkbox" id="check-2008" class="check__input"/>
+      <label for="check-2008" class="check__label">2008</label>
+    </div>
+  </div>
+  
+</div>
+    <div class="input-group" id="input-group--variables">
+  
+  <h2 class="input-group__title">Variables</h2>
+  <span class="input-group__toggle"></span>
+  
+  <div class="input-group__content">
+    <div class="">
+      <select class="input-select input-select--variables">
+        <option></option>
+<optgroup label="Passing">
+  <option data-stat="PassComp">Pass Completions</option>
+  <option data-stat="PassAtt">Pass Attempts</option>
+  <option data-stat="PassYds">Pass Yards</option>
+  <option data-stat="PassTD">Pass TD</option>
+  <option data-stat="PassINT">Interceptions</option>
+</optgroup>
+<optgroup label="Rushing">
+  <option data-stat="RushAtt">Rush Attempts</option>
+  <option data-stat="RushYds">Rush Yards</option>
+  <option data-stat="RushTD">Rush TD</option>
+  <option data-stat="RushYPA">Yards per Rush</option>
+</optgroup>
+<optgroup label="Receiving">
+  <option data-stat="Recs">Receptions</option>
+  <option data-stat="RecYards">Receiving Yards</option>
+  <option data-stat="RecYPR">Yards per Reception</option>
+  <option data-stat="RecTD">Receiving Touchdowns</option>
+</optgroup>
+<optgroup label="Total">
+  <option data-stat="ScrimYds">Total Scrimmage Yards</option>
+  <option data-stat="TotalTD">Total Touchdowns</option>
+</optgroup>
+<optgroup label="Fantasy">
+  <option data-stat="FantPt">Fantasy Points</option>
+  <option data-stat="PosRank">Fantasy Position Rank</option>
+  <option data-stat="VBD">VBD Points</option>
+  <option data-stat="OvRank">VBD Rank</option>
+</optgroup>
+<optgroup label="Misc.">
+  <option data-stat="Season">Season</option>
+  <option data-stat="Age">Age</option>
+  <option data-stat="G">Games Played</option>
+  <option data-stat="GS">Games Started</option>
+</optgroup>
+      </select>
+    </div>
+    <div class="">
+      <select class="input-select input-select--variables">
+        <option></option>
+<optgroup label="Passing">
+  <option data-stat="PassComp">Pass Completions</option>
+  <option data-stat="PassAtt">Pass Attempts</option>
+  <option data-stat="PassYds">Pass Yards</option>
+  <option data-stat="PassTD">Pass TD</option>
+  <option data-stat="PassINT">Interceptions</option>
+</optgroup>
+<optgroup label="Rushing">
+  <option data-stat="RushAtt">Rush Attempts</option>
+  <option data-stat="RushYds">Rush Yards</option>
+  <option data-stat="RushTD">Rush TD</option>
+  <option data-stat="RushYPA">Yards per Rush</option>
+</optgroup>
+<optgroup label="Receiving">
+  <option data-stat="Recs">Receptions</option>
+  <option data-stat="RecYards">Receiving Yards</option>
+  <option data-stat="RecYPR">Yards per Reception</option>
+  <option data-stat="RecTD">Receiving Touchdowns</option>
+</optgroup>
+<optgroup label="Total">
+  <option data-stat="ScrimYds">Total Scrimmage Yards</option>
+  <option data-stat="TotalTD">Total Touchdowns</option>
+</optgroup>
+<optgroup label="Fantasy">
+  <option data-stat="FantPt">Fantasy Points</option>
+  <option data-stat="PosRank">Fantasy Position Rank</option>
+  <option data-stat="VBD">VBD Points</option>
+  <option data-stat="OvRank">VBD Rank</option>
+</optgroup>
+<optgroup label="Misc.">
+  <option data-stat="Season">Season</option>
+  <option data-stat="Age">Age</option>
+  <option data-stat="G">Games Played</option>
+  <option data-stat="GS">Games Started</option>
+</optgroup>
+      </select>
+    </div>
+    <div class="">
+      <select class="input-select input-select--variables">
+        <option></option>
+<optgroup label="Passing">
+  <option data-stat="PassComp">Pass Completions</option>
+  <option data-stat="PassAtt">Pass Attempts</option>
+  <option data-stat="PassYds">Pass Yards</option>
+  <option data-stat="PassTD">Pass TD</option>
+  <option data-stat="PassINT">Interceptions</option>
+</optgroup>
+<optgroup label="Rushing">
+  <option data-stat="RushAtt">Rush Attempts</option>
+  <option data-stat="RushYds">Rush Yards</option>
+  <option data-stat="RushTD">Rush TD</option>
+  <option data-stat="RushYPA">Yards per Rush</option>
+</optgroup>
+<optgroup label="Receiving">
+  <option data-stat="Recs">Receptions</option>
+  <option data-stat="RecYards">Receiving Yards</option>
+  <option data-stat="RecYPR">Yards per Reception</option>
+  <option data-stat="RecTD">Receiving Touchdowns</option>
+</optgroup>
+<optgroup label="Total">
+  <option data-stat="ScrimYds">Total Scrimmage Yards</option>
+  <option data-stat="TotalTD">Total Touchdowns</option>
+</optgroup>
+<optgroup label="Fantasy">
+  <option data-stat="FantPt">Fantasy Points</option>
+  <option data-stat="PosRank">Fantasy Position Rank</option>
+  <option data-stat="VBD">VBD Points</option>
+  <option data-stat="OvRank">VBD Rank</option>
+</optgroup>
+<optgroup label="Misc.">
+  <option data-stat="Season">Season</option>
+  <option data-stat="Age">Age</option>
+  <option data-stat="G">Games Played</option>
+  <option data-stat="GS">Games Started</option>
+</optgroup>
+      </select>
+    </div>
+    <div class="">
+      <select class="input-select input-select--variables">
+        <option></option>
+<optgroup label="Passing">
+  <option data-stat="PassComp">Pass Completions</option>
+  <option data-stat="PassAtt">Pass Attempts</option>
+  <option data-stat="PassYds">Pass Yards</option>
+  <option data-stat="PassTD">Pass TD</option>
+  <option data-stat="PassINT">Interceptions</option>
+</optgroup>
+<optgroup label="Rushing">
+  <option data-stat="RushAtt">Rush Attempts</option>
+  <option data-stat="RushYds">Rush Yards</option>
+  <option data-stat="RushTD">Rush TD</option>
+  <option data-stat="RushYPA">Yards per Rush</option>
+</optgroup>
+<optgroup label="Receiving">
+  <option data-stat="Recs">Receptions</option>
+  <option data-stat="RecYards">Receiving Yards</option>
+  <option data-stat="RecYPR">Yards per Reception</option>
+  <option data-stat="RecTD">Receiving Touchdowns</option>
+</optgroup>
+<optgroup label="Total">
+  <option data-stat="ScrimYds">Total Scrimmage Yards</option>
+  <option data-stat="TotalTD">Total Touchdowns</option>
+</optgroup>
+<optgroup label="Fantasy">
+  <option data-stat="FantPt">Fantasy Points</option>
+  <option data-stat="PosRank">Fantasy Position Rank</option>
+  <option data-stat="VBD">VBD Points</option>
+  <option data-stat="OvRank">VBD Rank</option>
+</optgroup>
+<optgroup label="Misc.">
+  <option data-stat="Season">Season</option>
+  <option data-stat="Age">Age</option>
+  <option data-stat="G">Games Played</option>
+  <option data-stat="GS">Games Started</option>
+</optgroup>
+      </select>
+    </div>
+  </div>
+  
+</div>
+
+    <div class="input-group" id="input-group--gs-switch">
+  <div class="switch-component">
+    <p class="switch__description">Pick one</p>
+    <div class="switch__option">
+      <input type="radio" name="gs-switch" id="gsSwitchGame" value="game" class="switch__input"/>
+      <label for="gsSwitchGame" class="switch__label">Game Average</label>
+    </div>
+    <div class="switch__option">
+      <input type="radio" name="gs-switch" id="gsSwitchSeason" value="season" class="switch__input"/>
+      <label for="gsSwitchSeason" class="switch__label">Season Total</label>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+
+
+  <div class="chart-pane">
+</div>
+
+
+
+</div>
+
+      <script src="scripts/bundle.js"></script>
+    </body>
+</html>
