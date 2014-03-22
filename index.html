@@ -11,7 +11,14 @@
     </head>
     <body>
 
-      <div class="page-wrapper">
+      <div class="info-bar">
+</div>
+
+<span class="menu-toggle">
+  <span></span>
+</span>
+
+<div class="page-wrapper">
   <div class="control-pane">
 
     <div class="input-group" id="input-group--pp-switch">
@@ -53,6 +60,21 @@
   </div>
   
 </div>
+
+    <div class="input-group" id="input-group--players">
+  
+  <h2 class="input-group__title">Players</h2>
+  <span class="input-group__toggle"></span>
+  
+  <div class="input-group__content">
+    <div class="">
+      <select class="input-select input-select--players" id="playerSelect" placeholder="Loading players..." multiple>
+        <option></option>
+      </select>
+    </div>
+  </div>
+  
+</div>
     
     
     <div class="input-group" id="input-group--seasons">
@@ -90,9 +112,9 @@
   <span class="input-group__toggle"></span>
   
   <div class="input-group__content">
-    <div class="">
-      
-      <select class="input-select input-select--variables" placeholder-"Pick a variable...">
+    <div class="input-select-component">
+      <label for="xAxisVarSelect">X-Axis Variable</label>
+      <select id="xAxisVarSelect" class="input-select input-select--variables">
         <option></option>
 <optgroup label="Passing">
   <option data-stat="PassComp">Pass Completions</option>
@@ -131,8 +153,9 @@
 </optgroup>
       </select>
     </div>
-    <div class="">
-      <select class="input-select input-select--variables" placeholder-"Pick a variable...">
+    <div class="input-select-component">
+      <label for="xAxisVarSelect">Y-Axis Variable</label>
+      <select id="yAxisVarSelect" class="input-select input-select--variables">
         <option></option>
 <optgroup label="Passing">
   <option data-stat="PassComp">Pass Completions</option>
@@ -171,8 +194,9 @@
 </optgroup>
       </select>
     </div>
-    <div class="">
-      <select class="input-select input-select--variables" placeholder-"Pick a variable...">
+    <div class="input-select-component">
+      <label for="xAxisVarSelect">Dot Size Variable</label>
+      <select id="sizeVarSelect" class="input-select input-select--variables">
         <option></option>
 <optgroup label="Passing">
   <option data-stat="PassComp">Pass Completions</option>
@@ -211,8 +235,9 @@
 </optgroup>
       </select>
     </div>
-    <div class="">
-      <select class="input-select input-select--variables" placeholder-"Pick a variable...">
+    <div class="input-select-component">
+      <label for="xAxisVarSelect">Dot Shade Variable</label>
+      <select id="shadeVarSelect" class="input-select input-select--variables">
         <option></option>
 <optgroup label="Passing">
   <option data-stat="PassComp">Pass Completions</option>
@@ -269,6 +294,14 @@
   </div>
 </div>
 
+    <p>
+      <small>© 2014 &mdash; Nick Bottomley</small>
+    </p>
+    <p>
+      <small>
+        <a href="#">Code on GitHub</a>
+      </small>
+    </p>
 
   </div>
   <div class="chart-pane">
