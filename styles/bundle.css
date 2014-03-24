@@ -48,13 +48,8 @@
   font-family: "chosen-js-icons";
   content: "\e000"; }
 
-.chosen-container-active.chosen-single-with-drop .chosen-single div b:after {
-  position: absolute;
-  right: 0;
-  top: 0;
-  display: block;
-  content: "\e000";
-  font-size: 0.75rem; }
+.chosen-with-drop .chosen-single div b:after {
+  content: "\e000" !important; }
 
 /* @group Base */
 .chosen-container {
@@ -214,17 +209,21 @@
   list-style: none; }
   .chosen-container-multi .chosen-choices li.search-field {
     margin: 0;
-    padding: 0;
+    padding: 0 0.25rem 0.25rem 0;
     white-space: nowrap; }
     .chosen-container-multi .chosen-choices li.search-field input[type="text"] {
       margin: 1px 0;
       padding: 0.125em 0.375em;
       height: 1.25em;
-      background: transparent !important;
       color: #666666;
       font-size: 100%;
       line-height: normal;
       border-radius: 0; }
+      .chosen-container-multi .chosen-choices li.search-field input[type="text"], .chosen-container-multi .chosen-choices li.search-field input[type="text"]:focus {
+        border: none;
+        outline: none;
+        background: transparent;
+        box-shadow: none; }
     .chosen-container-multi .chosen-choices li.search-field .default {
       color: #999999; }
   .chosen-container-multi .chosen-choices li.search-choice {
@@ -247,6 +246,8 @@
       font-size: 75%; }
       .chosen-container-multi .chosen-choices li.search-choice .search-choice-close:hover {
         background-position: -42px -10px; }
+  .chosen-container-multi .chosen-choices li.search-choice + .search-field {
+    padding-top: 0.125em; }
   .chosen-container-multi .chosen-choices li.search-choice-disabled {
     padding-right: 5px;
     border: 1px solid #cccccc;
@@ -658,11 +659,13 @@ dl {
 
 body {
   color: #2c3e50;
-  font-family: "Avenir Next", "Avenir", "Proxima Nova", "proxima-nova", "Helvetica Neue", "Helvetica", sans-serif; }
+  font-family: "Avenir Next", "Avenir", "Proxima Nova", "proxima-nova", "Helvetica Neue", "Helvetica", sans-serif;
+  font-family: "Proxima Nova", "proxima-nova", "Helvetica Neue", "Helvetica", sans-serif; }
 
 h1, h2, h3, h4, h5, h6, p, label, input, select {
   color: #2c3e50;
-  font-family: "Avenir Next", "Avenir", "Proxima Nova", "proxima-nova", "Helvetica Neue", "Helvetica", sans-serif; }
+  font-family: "Avenir Next", "Avenir", "Proxima Nova", "proxima-nova", "Helvetica Neue", "Helvetica", sans-serif;
+  font-family: "Proxima Nova", "proxima-nova", "Helvetica Neue", "Helvetica", sans-serif; }
 
 .input-group {
   margin-bottom: 2rem;
@@ -697,17 +700,17 @@ h1, h2, h3, h4, h5, h6, p, label, input, select {
   transform: rotate(90deg); }
 
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"] {
-  font-family: inherit !important;
-  outline: 0.5rem solid transparent !important;
-  border: 1px solid #2c3e50 !important;
-  transition: border-color 0.25s ease-in-out, outline 0.25s ease-in-out !important;
-  box-shadow: none !important; }
+  font-family: inherit;
+  outline: 0.5rem solid transparent;
+  border: 1px solid #2c3e50;
+  transition: border-color 0.25s ease-in-out, outline 0.25s ease-in-out;
+  box-shadow: none; }
 
 input[type="email"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="url"]:hover, input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="month"]:hover, input[type="time"]:hover, input[type="week"]:hover {
-  border-color: #2c3e50 !important; }
+  border-color: #2c3e50; }
 
 input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus {
-  outline: 2px solid #2c3e50 !important; }
+  outline: 2px solid #2c3e50; }
 
 .check-group .check__label {
   margin-bottom: 0; }
@@ -802,18 +805,21 @@ input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:fo
   background: #2c3e50; }
 
 .switch-component {
-  font-size: 75%;
-  font-weight: bold; }
+  font-weight: bold;
+  text-transform: uppercase; }
   .switch-component .switch__description {
     text-align: center;
     margin-bottom: 0.5em; }
   .switch-component .switch__option {
-    font-weight: bold;
-    float: left;
-    width: 50%;
     border: 1px solid #2c3e50;
     color: #2c3e50; }
     .switch-component .switch__option:last-of-type {
+      border-top: none; }
+  .switch-component .switch__option--inline {
+    float: left;
+    width: 50%; }
+    .switch-component .switch__option--inline:last-of-type {
+      border-top: 1px solid;
       border-left: none; }
   .switch-component .switch__input {
     display: none; }
@@ -832,8 +838,6 @@ input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:fo
     content: "";
     display: table;
     clear: both; }
-  .switch-component .switch__input:not(:checked) + .switch__label {
-    opacity: 0.75; }
 
 .page-wrapper {
   display: flex; }
@@ -856,12 +860,12 @@ input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:fo
 .menu-toggle {
   position: relative;
   display: inline-block;
-  width: 30px;
+  width: 2rem;
   height: 30px;
-  margin: 25px;
+  margin: 0;
   position: fixed;
-  right: 0.5rem;
-  top: 0.5rem;
+  right: 2rem;
+  top: 2rem;
   cursor: pointer; }
   .menu-toggle span {
     margin: 0 auto;
@@ -869,17 +873,17 @@ input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:fo
     top: 12px;
     -webkit-transition-duration: 0s;
     -webkit-transition-delay: 0.2s;
-    width: 30px;
+    width: 2rem;
     height: 6px;
-    background-color: black;
+    background-color: #2c3e50;
     display: block; }
     .menu-toggle span:before, .menu-toggle span:after {
       position: absolute;
       content: ""; }
     .menu-toggle span:before, .menu-toggle span:after {
-      width: 30px;
+      width: 2rem;
       height: 6px;
-      background-color: black;
+      background-color: #2c3e50;
       display: block; }
     .menu-toggle span:before {
       margin-top: -12px; }
