@@ -13,7 +13,8 @@
     </head>
     <body>
 
-      <div class="info-bar">
+      <div class="navbar">
+  <h1 class="navbar__title">NFL Plotter</h1>
 </div>
 
 <span class="menu-toggle">
@@ -27,11 +28,11 @@
   <div class="switch-component">
     <p class="switch__description">Pick one</p>
     <div class="switch__option">
-      <input type="radio" name="pp-switch" id="ppSwitchPosition" value="position" class="switch__input"/>
+      <input type="radio" name="pp-switch" id="ppSwitchPosition" value="positions" class="switch__input"/>
       <label for="ppSwitchPosition" class="switch__label">By Position</label>
     </div>
     <div class="switch__option">
-      <input type="radio" name="pp-switch" id="ppSwitchPlayer" value="player" class="switch__input"/>
+      <input type="radio" name="pp-switch" id="ppSwitchPlayer" value="players" class="switch__input"/>
       <label for="ppSwitchPlayer" class="switch__label">By Player</label>
     </div>
   </div>
@@ -43,22 +44,37 @@
   <span class="input-group__toggle"></span>
   
   <div class="input-group__content check-group">
+
+    
+
     <div class="check-component-blue">
-      <input type="checkbox" id="check-qb" class="check__input"/>
-      <label for="check-qb" class="check__label">Quarterbacks</label>
+      <input type="checkbox" id="check-qb" class="check__input" value="QB"/>
+      <label for="check-qb" class="check__label">QUARTERBACKS</label>
     </div>
+
+    
+
     <div class="check-component-green">
-      <input type="checkbox" id="check-rb" class="check__input"/>
-      <label for="check-rb" class="check__label">Running Backs</label>
+      <input type="checkbox" id="check-rb" class="check__input" value="RB"/>
+      <label for="check-rb" class="check__label">RUNNING BACKS</label>
     </div>
+
+    
+
     <div class="check-component-yellow">
-      <input type="checkbox" id="check-te" class="check__input"/>
-      <label for="check-te" class="check__label">Tight Ends</label>
+      <input type="checkbox" id="check-te" class="check__input" value="TE"/>
+      <label for="check-te" class="check__label">TIGHT ENDS</label>
     </div>
+
+    
+
     <div class="check-component-orange">
-      <input type="checkbox" id="check-wr" class="check__input"/>
-      <label for="check-wr" class="check__label">Wide Receivers</label>
+      <input type="checkbox" id="check-wr" class="check__input" value="WR"/>
+      <label for="check-wr" class="check__label">WIDE RECEIVERS</label>
     </div>
+
+    
+    
   </div>
   
 </div>
@@ -84,39 +100,54 @@
   <span class="input-group__toggle"></span>
   
   <div class="input-group__content check-group">
-    <div class="check-component-base">
-      <input type="checkbox" id="check-2012" class="check__input"/>
-      <label for="check-2012" class="check__label">2012</label>
-    </div>
-    <div class="check-component-base">
-      <input type="checkbox" id="check-2011" class="check__input"/>
-      <label for="check-2011" class="check__label">2011</label>
-    </div>
-    <div class="check-component-base">
-      <input type="checkbox" id="check-2010" class="check__input"/>
-      <label for="check-2010" class="check__label">2010</label>
-    </div>
-    <div class="check-component-base">
-      <input type="checkbox" id="check-2009" class="check__input"/>
-      <label for="check-2009" class="check__label">2009</label>
-    </div>
-    <div class="check-component-base">
-      <input type="checkbox" id="check-2008" class="check__input"/>
-      <label for="check-2008" class="check__label">2008</label>
-    </div>
+
+    
+      <div class="check-component-base">
+        <input type="checkbox" id="check-2013" class="check__input" value="2013"/>
+        <label for="check-2013" class="check__label">2013</label>
+      </div>
+    
+      <div class="check-component-base">
+        <input type="checkbox" id="check-2012" class="check__input" value="2012"/>
+        <label for="check-2012" class="check__label">2012</label>
+      </div>
+    
+      <div class="check-component-base">
+        <input type="checkbox" id="check-2011" class="check__input" value="2011"/>
+        <label for="check-2011" class="check__label">2011</label>
+      </div>
+    
+      <div class="check-component-base">
+        <input type="checkbox" id="check-2010" class="check__input" value="2010"/>
+        <label for="check-2010" class="check__label">2010</label>
+      </div>
+    
+      <div class="check-component-base">
+        <input type="checkbox" id="check-2009" class="check__input" value="2009"/>
+        <label for="check-2009" class="check__label">2009</label>
+      </div>
+    
+      <div class="check-component-base">
+        <input type="checkbox" id="check-2008" class="check__input" value="2008"/>
+        <label for="check-2008" class="check__label">2008</label>
+      </div>
+    
+
   </div>
   
 </div>
+    
     <div class="input-group" id="input-group--variables">
   
   <h2 class="input-group__title">Variables</h2>
   <span class="input-group__toggle"></span>
-  
   <div class="input-group__content">
-    <div class="input-select-component">
-      <label for="xAxisVarSelect">X-Axis Variable</label>
-      <select id="xAxisVarSelect" class="input-select input-select--variables">
-        <option></option>
+    
+    
+      <div class="input-select-component">
+        <label for="x-var-select">X-Axis Variable</label>
+        <select id="x-var-select" class="input-select input-select--variables">
+          <option></option>
 <optgroup label="Passing">
   <option data-stat="PassComp">Pass Completions</option>
   <option data-stat="PassAtt">Pass Attempts</option>
@@ -152,12 +183,13 @@
   <option data-stat="G">Games Played</option>
   <option data-stat="GS">Games Started</option>
 </optgroup>
-      </select>
-    </div>
-    <div class="input-select-component">
-      <label for="xAxisVarSelect">Y-Axis Variable</label>
-      <select id="yAxisVarSelect" class="input-select input-select--variables">
-        <option></option>
+        </select>
+      </div>
+    
+      <div class="input-select-component">
+        <label for="y-var-select">Y-Axis Variable</label>
+        <select id="y-var-select" class="input-select input-select--variables">
+          <option></option>
 <optgroup label="Passing">
   <option data-stat="PassComp">Pass Completions</option>
   <option data-stat="PassAtt">Pass Attempts</option>
@@ -193,12 +225,13 @@
   <option data-stat="G">Games Played</option>
   <option data-stat="GS">Games Started</option>
 </optgroup>
-      </select>
-    </div>
-    <div class="input-select-component">
-      <label for="xAxisVarSelect">Dot Size Variable</label>
-      <select id="sizeVarSelect" class="input-select input-select--variables">
-        <option></option>
+        </select>
+      </div>
+    
+      <div class="input-select-component">
+        <label for="size-var-select">Dot Size Variable</label>
+        <select id="size-var-select" class="input-select input-select--variables">
+          <option></option>
 <optgroup label="Passing">
   <option data-stat="PassComp">Pass Completions</option>
   <option data-stat="PassAtt">Pass Attempts</option>
@@ -234,12 +267,13 @@
   <option data-stat="G">Games Played</option>
   <option data-stat="GS">Games Started</option>
 </optgroup>
-      </select>
-    </div>
-    <div class="input-select-component">
-      <label for="xAxisVarSelect">Dot Shade Variable</label>
-      <select id="shadeVarSelect" class="input-select input-select--variables">
-        <option></option>
+        </select>
+      </div>
+    
+      <div class="input-select-component">
+        <label for="shade-var-select">Dot Shade Variable</label>
+        <select id="shade-var-select" class="input-select input-select--variables">
+          <option></option>
 <optgroup label="Passing">
   <option data-stat="PassComp">Pass Completions</option>
   <option data-stat="PassAtt">Pass Attempts</option>
@@ -275,8 +309,10 @@
   <option data-stat="G">Games Played</option>
   <option data-stat="GS">Games Started</option>
 </optgroup>
-      </select>
-    </div>
+        </select>
+      </div>
+    
+
   </div>
   
 </div>
@@ -293,6 +329,30 @@
       <label for="gsSwitchSeason" class="switch__label">Season Total</label>
     </div>
   </div>
+</div>
+
+    <div class="input-group" id="input-group--variables">
+  
+  <div class="input-group__content">
+
+    <div class="control-component button-component">
+      <button 
+        class="btn btn-ghost btn-primary" 
+        id="control-button--render">
+        RENDER CHART
+      </button>
+    </div>
+
+    <div class="control-component button-component">
+      <button 
+        class="btn btn-ghost btn-secondary" 
+        id="control-button--highlight">
+        HIGHLIGHT MODE
+      </button>
+    </div>
+
+  </div>
+  
 </div>
 
     <p>
